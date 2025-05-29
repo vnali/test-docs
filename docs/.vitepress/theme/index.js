@@ -77,6 +77,8 @@ export default {
         const result = await graphql.query(SITE_PAGE_VISITS_QUERY, {
           t: randomValue, // Pass the random value as a variable
           page: decodeURIComponent(window.location.href)
+        }, {
+          private: true
         });
         counterData.value = result
       } catch (err) {

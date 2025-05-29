@@ -25,6 +25,8 @@ const topPagesCounter = async () => {
   try {
     const result = await graphql.query(TOP_PAGES_QUERY, {
       t: randomValue, // Pass the random value as a variable
+    }, {
+      private: true
     });
     topPagesData.value = result
   } catch (err) {

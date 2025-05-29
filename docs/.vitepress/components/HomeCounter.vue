@@ -27,6 +27,8 @@ const homeCounter = async () => {
   try {
     const result = await graphql.query(HOME_QUERY, {
       t: randomValue, // Pass the random value as a variable so we dont get cached results
+    }, {
+      private: true
     });
     homeData.value = result
   } catch (err) {
