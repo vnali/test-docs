@@ -11,6 +11,10 @@ export default defineConfig({
     },
     // ... other vite config options
   },
+  head: [
+    ['meta', { name: 'robots', content: 'noindex, nofollow' }]
+  ],
+
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
