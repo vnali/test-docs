@@ -34,6 +34,13 @@ By using this option you can control which pages are counted.
   - If you count visits by calling the count service directly in Twig, you can enable `Prevent access to counter via HTTP request` in plugin settings. In this case, requests to the backend counter via HTTP requests are ignored.
 :::
 
+## Count on Decoupled Sites
+
+:::info Info
+This documentation site is built with [VitePress](https://vitepress.dev/) and is decoupled from Craft CMS.  
+Guides on counting visits with this plugin in a decoupled frontend are coming soon.
+:::
+
 <!-- This is a comment
 ## Count when frontend is decoupled
 :::tip Tip
