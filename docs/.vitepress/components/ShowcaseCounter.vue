@@ -41,7 +41,7 @@ const topPagesCounter = async () => {
   <br>
   Today’s site views: {{ counterData.counter.visits }}
   <br>
-  Today’s top pages:
+  This week’s top pages:
     <table>
     <thead>
       <tr>
