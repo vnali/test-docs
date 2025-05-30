@@ -54,7 +54,7 @@ export default {
           credentials: "include",
         }).then(
           () => {
-            counter(); // now it runs after fetch completes
+            //counter(); // now it runs after fetch completes
           }
         ).
         catch(error => {
@@ -88,7 +88,8 @@ export default {
     
     onMounted(() => {
       // Run JS on initial page load
-      count()
+      count();
+      counter();
     })
 
     watch(
@@ -96,7 +97,8 @@ export default {
       () => {
         counterData.value.pageVisits.today = '📊'
         counterData.value.counter.visits = '📊'
-        count()
+        count();
+        counter();
         { immediate: true }
       }
     )
