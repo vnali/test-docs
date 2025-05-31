@@ -86,11 +86,13 @@ export default {
       }
     };
     
+    /*
     onMounted(() => {
       // Run JS on initial page load
-      count();
-      counter();
+      //count();
+      //counter();
     })
+    */
 
     watch(
       () => route.path,
@@ -103,6 +105,6 @@ export default {
       }
     )
 
-    provide('counterData', counterData) // 2. Provide it immediately
+    provide('counterData', counterData)
   }
 }

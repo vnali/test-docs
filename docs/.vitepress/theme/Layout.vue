@@ -65,7 +65,7 @@ function onImageError() {
     </template>
     <template #doc-before>
       <div class="statistics">
-        views: {{ counterData.pageVisits.today }}
+        views: {{ counterData.pageVisits.today == 0 ? 1 : counterData.pageVisits.today }}
       </div> 
     </template>
   </DefaultTheme.Layout>
