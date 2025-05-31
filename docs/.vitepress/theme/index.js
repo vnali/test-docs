@@ -63,7 +63,7 @@ export default {
       }
   };
 
-    const counter = async () => {
+    async function counter(path) {
       // Function to generate a random value
       function getRandomValue() {
         return (Math.random() + 1).toString(36).substring(7); // Generates a random number between 0 and 1
@@ -80,19 +80,26 @@ export default {
         }, {
           private: true
         });
-        counterData.value = result
+        if (path === latestPath) {
+          counterData.value = result
+        } else {
+          console.log(path + '-' + latestPath);
+        }
       } catch (err) {
         console.error('Error fetching globals:', err);
       }
     };
     
-    /*
+    let latestPath = ''
     onMounted(() => {
+      counterData.value.pageVisits.today = '📊'
+      counterData.value.counter.visits = '📊'
       // Run JS on initial page load
-      //count();
-      //counter();
+      count();
+      const currentPath = route.path
+      latestPath = currentPath
+      counter(currentPath);
     })
-    */
 
     watch(
       () => route.path,
@@ -100,8 +107,9 @@ export default {
         counterData.value.pageVisits.today = '📊'
         counterData.value.counter.visits = '📊'
         count();
-        counter();
-        { immediate: true }
+        const currentPath = route.path
+        latestPath = currentPath
+        counter(currentPath);
       }
     )
 
